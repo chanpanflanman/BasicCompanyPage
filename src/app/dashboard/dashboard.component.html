@@ -1,0 +1,80 @@
+<div class="card table-header">
+    <h1>Employee Info</h1>
+    <p-button (click)="showModal()" (click)="clickAddEmployee()" icon="pi pi-external-link" label="Add Employee" class="employeeButton"></p-button>
+</div>
+<div class="tableSpace">
+    <table>
+        <thead>
+            <tr>
+                <th scope="col">Employee ID</th>
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Task</th>
+                <th scope="col">Progress</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let row of employeeTable">
+                <td>{{row.id}}</td>
+                <td>{{row.firstName}}</td>
+                <td>{{row.lastName}}</td>
+                <td>{{row.email}}</td>
+                <td>{{row.task}}</td>
+                <td>{{row.progress}}</td>
+                <td>
+                    <p-button class="editButton" (click)="showModal()" (click)="onEdit(row)">Edit</p-button>
+                    <p-button class="deleteButton" styleClass="p-button-danger" (click)="detelFromTable(row)">Delete</p-button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<p-dialog header="Employee Form" [(visible)]="modalVisible" [style]="{width: '30vw'}">
+    <form [formGroup]="employeeForm" (ngSubmit)="postToTable()">
+        <div class="field grid">    
+            <label for="firstname" class="col-fixed" style="width:100px">First Name</label>
+            <div class="col">
+                <input id="firstname" type="text"
+                    class="text-base  text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary"
+                    formControlName="firstName">
+            </div>
+        </div>
+        <div class="field grid">
+            <label for="lastname" class="col-fixed" style="width:100px">Last Name</label>
+            <div class="col">
+                <input id="lastname" type="text"
+                    class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary"
+                    formControlName="lastName">
+            </div>
+        </div>
+        <div class="field grid">
+            <label for="email" class="col-fixed" style="width:100px">Email</label>
+            <div class="col">
+                <input id="email" type="text"
+                    class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary"
+                    formControlName="email">
+            </div>
+        </div>
+        <div class="field grid">
+            <label for="task" class="col-fixed" style="width:100px">Task</label>
+            <div class="col">
+                <input id="task" type="text"
+                    class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary"
+                    formControlName="task">
+            </div>
+        </div>
+        <div class="field grid">
+            <label for="progress" class="col-fixed" style="width:100px">Progress</label>
+            <div class="col">
+                <input id="progress" type="text"
+                    class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary"
+                    formControlName="progress">
+            </div>
+        </div>
+        <p-button *ngIf="showAdd" type="submit">Add</p-button>
+        <p-button *ngIf="showUpdate" type="button" (onClick)="updateTable()">Update</p-button>
+    </form>
+</p-dialog>

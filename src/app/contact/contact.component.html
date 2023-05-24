@@ -1,0 +1,33 @@
+<div class="pageStruct">
+    <div class="companyLogo">
+        <img src="https://seeklogo.com/images/B/business-company-logo-C561B48365-seeklogo.com.png" alt="">
+    </div>
+    <div class="contactFormCSS card flex justify-content" style="width: 400px;">
+        <form [formGroup]="contactData" (ngSubmit)="contactLog(contactData.value)">
+            <div>
+                <label for="username">Name</label> <br>
+                <input type="text" id="username" formControlName="name" pInputText aria-describedby="username-help">
+            </div>
+            <span style="color:red;" *ngIf="name && name.invalid && name.touched">Please enter a valid name</span>
+            <br><br>
+            <label for="ph_number">Phone number</label> <br>
+            <input type="number" name="ph_number" id="phno" formControlName="contactNo" pInputText
+                aria-describedby="ph_number-help">
+            <br>
+            <span style="color:red;" *ngIf="phNo && phNo.invalid && phNo.touched">Please enter a valid contact
+                no.</span>
+            <br><br>
+            <label for="email">Email address</label> <br>
+            <input type="text" name="email" formControlName="emailAd" pInputText aria-describedby="email-help">
+            <br>
+            <span style="color:red;" *ngIf="email && email.invalid && email.touched">Please enter a valid email</span>
+            <br><br>
+            <label for="comments">Comments</label> <br>
+            <input type="text" name="comments" formControlName="comment" pInputText aria-describedby="comments-help" class="p-inputtext-lg">
+            <br>
+            <span style="color:red;" *ngIf="comment && comment.invalid && comment.touched">Please enter comments</span>
+            <br><br>
+            <button pButton pRipple [disabled]="contactData.invalid">Submit</button>
+        </form>
+    </div>
+</div>

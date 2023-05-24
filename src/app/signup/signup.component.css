@@ -1,0 +1,37 @@
+.signupFormCSS {
+    margin-top: 100px;
+    margin-right: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    width: 400px;
+}
+
+.card {
+    background-color: rgb(210, 255, 200);
+    width: auto;
+}
+
+.p-inputtext {
+    width: 80%;
+}
+
+.signupGridContainer {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+.formGrid {
+    display: grid;
+    grid-template-columns: 240px 240px;
+    grid-template-rows: 90px 90px 50px;
+    justify-items: start;
+    align-items: center;
+}
+
+.formGrid .spacing {
+    grid-column: -3 / -1 ;
+}
+
+span {
+    padding-left: 5px;
+}

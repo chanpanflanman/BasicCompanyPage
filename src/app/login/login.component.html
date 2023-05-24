@@ -1,0 +1,23 @@
+<div class="loginGridContainer">
+    <div class="loginFormCSS card flex justify-content">
+        <form [formGroup]="loginForm" (ngSubmit)="logData()">
+            <label for="login">User name</label>
+            <br>
+            <input type="text" name="login" id="login" pInputText
+            aria-describedby="login-help" formControlName="email">
+            <br>
+            <span style="color: red;" *ngIf="email && email.invalid && email.touched"> Please enter a valid user name</span>
+            <br><br>
+            <label for="login">Password</label>
+            <br>
+            <input type="password" name="password" id="password" pInputText
+            aria-describedby="password-help" formControlName="password">
+            <br>
+            <span style="color: red;" *ngIf="pass && pass.invalid && pass.touched"> Please enter a valid password</span>
+            <br><br>
+            <button pButton pRipple [disabled]="loginForm.invalid">Submit</button>
+            <br>
+            <a routerLink="/signup" style="color: rgb(102, 58, 102)">Haven't signed up yet? Click here!</a>
+        </form>
+    </div>
+</div>

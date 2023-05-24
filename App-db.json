@@ -1,0 +1,57 @@
+{
+  "signups": [
+    {
+      "name": "Chanakya Kanthi",
+      "email": "chanakya@gmail.com",
+      "contact": 9962593835,
+      "password": "chanakya123456",
+      "id": 1
+    },
+    {
+      "name": "Patrick Stewart",
+      "email": "patrick.stewart@gmail.com",
+      "contact": 9842356784,
+      "password": "patrick123456",
+      "id": 2
+    },
+    {
+      "name": "Claire",
+      "email": "claire@gmail.com",
+      "contact": 9978546726,
+      "password": "claire123456",
+      "id": 3
+    },
+    {
+      "name": "amit",
+      "email": "Ak@gmail.com",
+      "contact": 1234567890,
+      "password": "Ak@123"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "name": "Patrick Smith",
+      "contactNo": 9804176451,
+      "emailAd": "patrick.smith@gmail.com",
+      "comment": "I'm happy with the service"
+    },
+    {
+      "name": "Chanakya Kanthi",
+      "contactNo": 9874156748,
+      "emailAd": "chanakya@gmail.com",
+      "comment": "This is a comment",
+      "id": 2
+    }
+  ],
+  "tables": [
+    {
+      "id": 1,
+      "firstName": "chanakya",
+      "lastName": "R",
+      "email": "Ak@gmail.com",
+      "task": "Travel",
+      "progress": "20%"
+    }
+  ]
+}
