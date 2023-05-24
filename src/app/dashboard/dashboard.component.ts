@@ -91,7 +91,7 @@ export class DashboardComponent implements OnInit {
     })
   }
 
-  detelFromTable(row: any) {
+  deleteFromTable(row: any) {
     this.api.deleteFromTable(row.id).subscribe(res => {
       this.getFromTable();
     })

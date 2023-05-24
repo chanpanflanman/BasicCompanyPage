@@ -29,10 +29,10 @@ export class LoginComponent {
     this.loginService.getUserSignUps().subscribe((res) => {
       this.loginData = res;
       // console.warn(this.loginData);
-      const correctLogin = this.loginData.find((a:any)=> {
-        return a.email === this.loginForm.value.email && a.password === this.loginForm.value.password;
+      const correctLogin = this.loginData.find((a: any) => {
+        return a.email === this.loginForm.value.email && a.password === this.loginForm.value.password; 
       });
-      if(correctLogin) {
+      if (correctLogin) {
         alert("Login successful!");
         this.loginForm.reset();
         this.router.navigate(['dashboard']);
