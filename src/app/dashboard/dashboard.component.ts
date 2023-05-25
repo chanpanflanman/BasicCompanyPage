@@ -92,7 +92,7 @@ export class DashboardComponent implements OnInit {
   }
 
   deleteFromTable(row: any) {
-    this.api.deleteFromTable(row.id).subscribe(res => {
+    this.api.deleteFromTable(row.id).subscribe(() => {
       this.getFromTable();
     })
   }

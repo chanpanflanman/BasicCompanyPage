@@ -9,7 +9,7 @@ export class BasicStorageService {
   urlComments = 'http://localhost:3000/comments';
   urlSignUps = 'http://localhost:3000/signups';
   urlTables = 'http://localhost:3000/tables';
-  constructor(private http: HttpClient) { } v
+  constructor(private http: HttpClient) { }
   // Contact Form
   getUserComments() {
     return this.http.get(this.urlComments);
