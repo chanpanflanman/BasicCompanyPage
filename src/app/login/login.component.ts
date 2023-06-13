@@ -33,7 +33,7 @@ export class LoginComponent {
         return a.email === this.loginForm.value.email && a.password === this.loginForm.value.password; 
       });
       if (correctLogin) {
-        alert("Login successful!");
+        alert(`Login successful! Welcome ${correctLogin.name}`);
         this.loginForm.reset();
         this.router.navigate(['dashboard']);
       }
